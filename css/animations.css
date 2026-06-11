@@ -1,0 +1,259 @@
+/* ============================================================
+   ABDELOUAHD PORTFOLIO — animations.css
+   Reusable keyframes + animation utility classes
+   Phase 1 & 2
+   ============================================================ */
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+
+/* Typing cursor blink */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Badge pulse dot */
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.5);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px rgba(52, 211, 153, 0);
+  }
+}
+
+/* Marquee horizontal scroll */
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Fade in (generic) */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Fade up */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade down */
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from left */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale in */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Shimmer (skeleton loading) */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Float (gentle up/down) */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Glow pulse */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 0.8; transform: scale(1.05); }
+}
+
+/* Count up (handled by JS, no CSS keyframe needed) */
+
+/* Hero badge entrance */
+@keyframes badge-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Underline expand */
+@keyframes underline-expand {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ============================================================
+   ANIMATION UTILITY CLASSES
+   Usage: add class to any element
+   ============================================================ */
+
+/* --- Delays --- */
+.anim-delay-100 { animation-delay: 100ms; }
+.anim-delay-200 { animation-delay: 200ms; }
+.anim-delay-300 { animation-delay: 300ms; }
+.anim-delay-400 { animation-delay: 400ms; }
+.anim-delay-500 { animation-delay: 500ms; }
+.anim-delay-600 { animation-delay: 600ms; }
+.anim-delay-800 { animation-delay: 800ms; }
+.anim-delay-1000 { animation-delay: 1000ms; }
+
+/* --- Durations --- */
+.anim-fast    { animation-duration: 200ms; }
+.anim-normal  { animation-duration: 400ms; }
+.anim-slow    { animation-duration: 700ms; }
+.anim-slower  { animation-duration: 1000ms; }
+
+/* --- Easing --- */
+.anim-ease-out   { animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+.anim-ease-in    { animation-timing-function: cubic-bezier(0.4, 0, 1, 1); }
+.anim-ease-in-out { animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+
+/* --- Preset combos --- */
+.anim-fade-in {
+  animation: fade-in 0.5s var(--ease-out) both;
+}
+
+.anim-fade-up {
+  animation: fade-up 0.6s var(--ease-out) both;
+}
+
+.anim-fade-down {
+  animation: fade-down 0.5s var(--ease-out) both;
+}
+
+.anim-scale-in {
+  animation: scale-in 0.5s var(--ease-out) both;
+}
+
+.anim-slide-left {
+  animation: slide-in-left 0.6s var(--ease-out) both;
+}
+
+.anim-slide-right {
+  animation: slide-in-right 0.6s var(--ease-out) both;
+}
+
+/* Float decoration */
+.anim-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Glow pulse for decorative blobs */
+.anim-glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* --- Shimmer skeleton --- */
+.anim-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--surface)    0%,
+    var(--surface-2)  40%,
+    var(--surface)    80%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+/* ============================================================
+   HERO STAGGER — auto-applied to hero children via JS class
+   ============================================================ */
+.hero-stagger > * {
+  animation: fade-up 0.7s var(--ease-out) both;
+}
+
+.hero-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.hero-stagger > *:nth-child(2) { animation-delay: 120ms; }
+.hero-stagger > *:nth-child(3) { animation-delay: 240ms; }
+.hero-stagger > *:nth-child(4) { animation-delay: 360ms; }
+.hero-stagger > *:nth-child(5) { animation-delay: 480ms; }
+.hero-stagger > *:nth-child(6) { animation-delay: 600ms; }
+
+/* ============================================================
+   GSAP classes (set by portfolio.js)
+   ============================================================ */
+
+/* The stacked portfolio card pinned layer */
+.portfolio-card--stacked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: opacity;
+  backface-visibility: hidden;
+}
+
+/* ============================================================
+   REDUCED MOTION — global override (also in style.css)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-in,
+  .anim-fade-up,
+  .anim-fade-down,
+  .anim-scale-in,
+  .anim-slide-left,
+  .anim-slide-right,
+  .anim-float,
+  .anim-glow-pulse,
+  .anim-shimmer,
+  .hero-stagger > * {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

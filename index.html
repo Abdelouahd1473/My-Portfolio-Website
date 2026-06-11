@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══ SEO Primary ═══ -->
+  <title>Abdelouahd — Concepteur Web Freelance · Sites qui convertissent</title>
+  <meta name="description" content="Concepteur web freelance spécialisé dans les sites modernes, rapides et orientés conversion. De la stratégie à la mise en ligne — 23 projets réalisés, 4 ans d'expérience." />
+  <meta name="author" content="Abdelouahd Chergui" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://abdelouahd.com/" />
+  <meta name="theme-color" content="#0A0A0B" />
+
+  <!-- ═══ Open Graph ═══ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://abdelouahd.com/" />
+  <meta property="og:title"       content="Abdelouahd — Concepteur Web Freelance · Sites qui convertissent" />
+  <meta property="og:description" content="Je crée des sites web modernes, rapides et pensés pour les résultats. De la stratégie à la mise en ligne, un interlocuteur unique." />
+  <meta property="og:image"       content="https://abdelouahd.com/assets/images/og-image.webp" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale"      content="fr_FR" />
+  <meta property="og:site_name"   content="Abdelouahd — Concepteur Web" />
+
+  <!-- ═══ Twitter Card ═══ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Abdelouahd — Concepteur Web Freelance · Sites qui convertissent" />
+  <meta name="twitter:description" content="Je crée des sites web modernes, rapides et pensés pour les résultats. De la stratégie à la mise en ligne." />
+  <meta name="twitter:image"       content="https://abdelouahd.com/assets/images/og-image.webp" />
+
+  <!-- ═══ Favicons ═══ -->
+  <link rel="icon"             type="image/x-icon"  href="assets/icons/favicon.ico" />
+  <link rel="icon"             type="image/png"     href="assets/icons/favicon-32x32.png"  sizes="32x32" />
+  <link rel="icon"             type="image/png"     href="assets/icons/favicon-16x16.png"  sizes="16x16" />
+  <link rel="apple-touch-icon"                      href="assets/icons/apple-touch-icon.png" sizes="180x180" />
+  <link rel="manifest"                              href="assets/icons/site.webmanifest" />
+
+  <!-- ═══ JSON-LD Structured Data ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://abdelouahd.com/#person",
+        "name": "Abdelouahd Chergui",
+        "jobTitle": "Concepteur web freelance",
+        "url": "https://abdelouahd.com/",
+        "image": "https://abdelouahd.com/assets/images/portrait.webp",
+        "sameAs": [
+          "https://www.linkedin.com/in/abdelouahd-chergui-223047211/",
+          "https://www.facebook.com/Chergui1473/"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://abdelouahd.com/#service",
+        "name": "Abdelouahd — Conception Web Freelance",
+        "url": "https://abdelouahd.com/",
+        "description": "Création de sites web modernes, landing pages, e-commerce et stratégies de marketing digital pour entreprises et professionnels.",
+        "provider": { "@id": "https://abdelouahd.com/#person" },
+        "serviceType": ["Création de sites web", "Landing pages", "E-commerce", "Marketing digital"],
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "url": "https://cal.com/abdelouahd-chergui-3mqd6u/discovery-call"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ Fonts — Preconnect ═══ -->
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap" />
+
+  <!-- ═══ Stylesheets ═══ -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       NAVIGATION — sticky, globale
+  ══════════════════════════════════════════════════════════════ -->
+  <header class="nav" id="nav" role="banner">
+    <div class="nav__container container">
+      <a href="#hero" class="nav__logo" aria-label="Abdelouahd — Accueil">
+        <span class="nav__logo-text">Abdelouahd</span>
+        <span class="nav__logo-dot" aria-hidden="true"></span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" role="navigation" aria-label="Navigation principale">
+        <a href="#why"       class="nav__link">Approche</a>
+        <a href="#portfolio" class="nav__link">Réalisations</a>
+        <a href="#services"  class="nav__link">Services</a>
+        <a href="#about"     class="nav__link">À propos</a>
+        <a href="#faq"       class="nav__link">FAQ</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a
+          href="https://cal.com/abdelouahd-chergui-3mqd6u/discovery-call"
+          class="btn btn--primary btn--sm nav__cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Réserver un appel</a>
+        <button
+          class="nav__burger"
+          id="navBurger"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="navMobile"
+        >
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+          <span class="nav__burger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav__mobile" id="navMobile" aria-hidden="true" role="dialog" aria-label="Menu principal">
+      <nav class="nav__mobile-links" aria-label="Navigation mobile">
+        <a href="#why"       class="nav__mobile-link">Approche</a>
+        <a href="#portfolio" class="nav__mobile-link">Réalisations</a>
+        <a href="#services"  class="nav__mobile-link">Services</a>
+        <a href="#about"     class="nav__mobile-link">À propos</a>
+        <a href="#faq"       class="nav__mobile-link">FAQ</a>
+        <a
+          href="https://cal.com/abdelouahd-chergui-3mqd6u/discovery-call"
+          class="btn btn--primary nav__mobile-cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Réserver un appel</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ══════════════════════════════════════════════════════════════
+         HERO — #hero
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="hero section" id="hero" aria-labelledby="heroHeading">
+      <div class="hero__grain" aria-hidden="true"></div>
+
+      <div class="hero__container container">
+        <div class="hero__badge" role="status" aria-live="polite">
+          <span class="hero__badge-dot" aria-hidden="true"></span>
+          <span>Disponible pour de nouveaux projets</span>
+        </div>
+
+        <h1 class="hero__heading" id="heroHeading">
+          Bonjour, je suis Abdelouahd.
+        </h1>
+
+        <p class="hero__typing" aria-live="polite" aria-atomic="false">
+          <span class="hero__typing-prefix">Je crée des sites qui&nbsp;</span><span
+            class="hero__typing-word"
+            id="typingWord"
+            aria-label="convertissent"
+          ></span><span
+            class="hero__typing-cursor"
+            aria-hidden="true"
+          >|</span>
+        </p>
+
+        <p class="hero__subtitle">
+          J'aide les entreprises et les marques à transformer leur présence en ligne en résultats concrets.
+        </p>
+
+        <div class="hero__cta-group">
+          <div class="hero__cta-primary-wrap">
+            <a
+              href="https://cal.com/abdelouahd-chergui-3mqd6u/discovery-call"
+              class="btn btn--primary btn--lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Réserver un appel</a>
+            <p class="hero__microcopy">Appel sans engagement · Réponse sous 24h</p>
+          </div>
+          <a href="#portfolio" class="btn btn--ghost btn--lg">
+            Voir mes réalisations
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__glow hero__glow--1" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--2" aria-hidden="true"></div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         LOGO MARQUEE
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="marquee-section" aria-label="Secteurs et clients représentés">
+      <div class="marquee" role="img" aria-label="Logos de clients">
+        <div class="marquee__track" id="marqueeTrack" aria-hidden="true">
+          <div class="marquee__set">
+            <img src="assets/logos/logo-01.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-02.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-03.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-04.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-05.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-06.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-07.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-08.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-09.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-10.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-11.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-12.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-13.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+          </div>
+          <div class="marquee__set" aria-hidden="true">
+            <img src="assets/logos/logo-01.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-02.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-03.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-04.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-05.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-06.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-07.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-08.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-09.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-10.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-11.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-12.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+            <img src="assets/logos/logo-13.webp" alt="" class="marquee__logo" loading="lazy" width="394" height="158" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         POURQUOI TRAVAILLER AVEC MOI — #why
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="why section" id="why" aria-labelledby="whyHeading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Mon approche</span>
+          <h2 class="section-title" id="whyHeading">Pourquoi travailler avec moi</h2>
+        </div>
+
+        <div class="why__grid">
+
+          <article class="why__card reveal" aria-labelledby="whyCard1">
+            <div class="why__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 2L2 9L16 16L30 9L16 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M2 16L16 23L30 16" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M2 23L16 30L30 23" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="why__card-title" id="whyCard1">Design sur-mesure</h3>
+            <p class="why__card-text">Chaque projet est conçu de zéro, pensé pour votre marque. Jamais de template générique ni de solution copiée-collée.</p>
+          </article>
+
+          <article class="why__card reveal" aria-labelledby="whyCard2">
+            <div class="why__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 24L12 14L18 20L24 10L28 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="28" cy="8" r="2" fill="currentColor"/>
+                <path d="M4 28H28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="why__card-title" id="whyCard2">Orienté résultats &amp; conversion</h3>
+            <p class="why__card-text">Je ne crée pas des sites beaux pour la galerie. Chaque décision de design vise un seul objectif : transformer vos visiteurs en clients.</p>
+          </article>
+
+          <article class="why__card reveal" aria-labelledby="whyCard3">
+            <div class="why__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M16 8V16L21 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 16H2M30 16H28M16 4V2M16 30V28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="why__card-title" id="whyCard3">Performance et rapidité</h3>
+            <p class="why__card-text">Sites optimisés pour le score Core Web Vitals, le référencement naturel et une expérience fluide sur tous les appareils.</p>
+          </article>
+
+          <article class="why__card reveal" aria-labelledby="whyCard4">
+            <div class="why__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 4C10 4 6 8 6 13C6 17 8 20 12 22V27H20V22C24 20 26 17 26 13C26 8 22 4 16 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M12 27H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="why__card-title" id="whyCard4">Accompagnement complet</h3>
+            <p class="why__card-text">De la stratégie à la mise en ligne, je suis votre interlocuteur unique. Pas de sous-traitance, pas de mauvaises surprises.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         RÉSULTATS & IMPACT — #results
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="results section" id="results" aria-labelledby="resultsHeading">
+      <h2 class="sr-only" id="resultsHeading">Résultats &amp; Impact</h2>
+      <div class="container">
+        <div class="results__grid">
+          <div class="results__item reveal">
+            <span class="results__number" data-target="23" data-suffix="+" aria-label="23 projets réalisés">0</span>
+            <span class="results__label" aria-hidden="true">Projets réalisés</span>
+          </div>
+          <div class="results__divider" aria-hidden="true"></div>
+          <div class="results__item reveal">
+            <span class="results__number" data-target="4" data-suffix="" aria-label="4 années d'expérience">0</span>
+            <span class="results__label" aria-hidden="true">Années d'expérience</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         PORTFOLIO — #portfolio
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="portfolio section" id="portfolio" aria-labelledby="portfolioHeading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Réalisations</span>
+          <h2 class="section-title" id="portfolioHeading">Mes derniers projets</h2>
+          <p class="section-subtitle">Des sites pensés pour convertir, construits pour durer.</p>
+        </div>
+      </div>
+      <div class="portfolio__wrapper" id="portfolioWrapper"></div>
+      <div class="portfolio__mobile-grid container" id="portfolioMobileGrid" aria-label="Liste des projets"></div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         SERVICES — #services
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="services section" id="services" aria-labelledby="servicesHeading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Ce que je fais</span>
+          <h2 class="section-title" id="servicesHeading">Services</h2>
+        </div>
+
+        <div class="services__grid">
+
+          <article class="services__card reveal" aria-labelledby="service1">
+            <div class="services__icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="6" width="30" height="22" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M3 11H33" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="7" cy="8.5" r="1" fill="currentColor"/>
+                <circle cx="11" cy="8.5" r="1" fill="currentColor"/>
+                <circle cx="15" cy="8.5" r="1" fill="currentColor"/>
+                <path d="M12 30V33M24 30V33M9 33H27" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="services__card-title" id="service1">Création de sites web</h3>
+            <p class="services__card-text">Sites modernes, rapides et sur-mesure pour entreprises et professionnels. Design soigné, performance optimisée, présence digitale mémorable.</p>
+            <span class="services__tag">Site vitrine · Site institutionnel</span>
+          </article>
+
+          <article class="services__card reveal" aria-labelledby="service2">
+            <div class="services__icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 30L18 6L30 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 22H26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="services__card-title" id="service2">Landing pages</h3>
+            <p class="services__card-text">Pages conçues pour convertir : structure persuasive, copywriting orienté action, appels à l'action stratégiques. Résultats mesurables.</p>
+            <span class="services__tag">Conversion · Campagnes · Lancement</span>
+          </article>
+
+          <article class="services__card reveal" aria-labelledby="service3">
+            <div class="services__icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="8" width="28" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M4 14H32" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M13 21H16M20 21H23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M13 25H23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="services__card-title" id="service3">E-commerce</h3>
+            <p class="services__card-text">Boutiques en ligne rapides, mobile-first, pensées pour l'expérience d'achat et le taux de conversion. De la vitrine au tunnel de vente.</p>
+            <span class="services__tag">Boutique · Catalogue · Paiement en ligne</span>
+          </article>
+
+          <article class="services__card reveal" aria-labelledby="service4">
+            <div class="services__icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="14" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M18 4C18 4 12 10 12 18C12 26 18 32 18 32" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M18 4C18 4 24 10 24 18C24 26 18 32 18 32" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M4 18H32M5.5 12H30.5M5.5 24H30.5" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="services__card-title" id="service4">Marketing digital</h3>
+            <p class="services__card-text">Stratégies d'acquisition, référencement naturel, publicité ciblée et optimisation de la croissance digitale pour attirer et fidéliser.</p>
+            <span class="services__tag">SEO · Publicité · Acquisition</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         PROCESS — #process
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="process section" id="process" aria-labelledby="processHeading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">La méthode</span>
+          <h2 class="section-title" id="processHeading">Comment ça fonctionne</h2>
+        </div>
+
+        <ol class="process__steps" role="list">
+
+          <li class="process__step reveal">
+            <div class="process__step-number" aria-hidden="true">01</div>
+            <div class="process__step-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14" cy="10" r="5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M6 24C6 20 9.58 17 14 17C18.42 17 22 20 22 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="process__step-content">
+              <h3 class="process__step-title">Découverte</h3>
+              <p class="process__step-text">Un échange pour comprendre vos objectifs, vos cibles et les résultats que vous attendez. C'est ici que tout commence.</p>
+            </div>
+          </li>
+
+          <li class="process__step reveal">
+            <div class="process__step-number" aria-hidden="true">02</div>
+            <div class="process__step-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 8H24M4 14H18M4 20H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="process__step-content">
+              <h3 class="process__step-title">Stratégie</h3>
+              <p class="process__step-text">Architecture de l'information, positionnement, arborescence et plan de conversion. La stratégie précède toujours le design.</p>
+            </div>
+          </li>
+
+          <li class="process__step reveal">
+            <div class="process__step-number" aria-hidden="true">03</div>
+            <div class="process__step-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="4" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9 14L12 17L19 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="process__step-content">
+              <h3 class="process__step-title">Création</h3>
+              <p class="process__step-text">Design haute-fidélité, développement front-end et intégration. Chaque pixel est pensé pour l'impact et la performance.</p>
+            </div>
+          </li>
+
+          <li class="process__step reveal">
+            <div class="process__step-number" aria-hidden="true">04</div>
+            <div class="process__step-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 4L17 10H23L18 14L20 20L14 16L8 20L10 14L5 10H11L14 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="process__step-content">
+              <h3 class="process__step-title">Lancement</h3>
+              <p class="process__step-text">Déploiement, tests finaux, mise en ligne et accompagnement post-lancement. Vous repartez avec un site qui tourne.</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         TÉMOIGNAGES — #testimonials
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="testimonials section" id="testimonials" aria-labelledby="testimonialsHeading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Ils en parlent</span>
+          <h2 class="section-title" id="testimonialsHeading">Ce que disent mes clients</h2>
+        </div>
+      </div>
+
+      <div class="testimonials__carousel-wrap">
+        <div class="testimonials__carousel" id="testimonialsCarousel" role="region" aria-label="Témoignages clients — défilement automatique">
+          <div class="testimonials__track" id="testimonialsTrack" aria-live="off">
+
+            <article class="testimonial__card" aria-labelledby="testi1Name">
+              <div class="testimonial__stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
+              <blockquote class="testimonial__quote">
+                <p>Le site reflète exactement l'image qu'on voulait donner à la clinique. On reçoit davantage de prises de contact depuis la mise en ligne, et les patients nous disent souvent qu'ils ont été rassurés en le visitant avant de prendre rendez-vous.</p>
+              </blockquote>
+              <footer class="testimonial__author">
+                <img src="assets/images/avatar-selma-benali.webp" alt="" class="testimonial__avatar" loading="lazy" width="88" height="88" onerror="this.style.display='none'" />
+                <div>
+                  <strong class="testimonial__name" id="testi1Name">Selma Benali</strong>
+                  <span class="testimonial__role">Directrice, Esthetica Dental Studio</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testimonial__card" aria-labelledby="testi2Name">
+              <div class="testimonial__stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
+              <blockquote class="testimonial__quote">
+                <p>We were unsure about redesigning our site since the old one seemed fine. Looking back, the difference is clear. Prospects take us more seriously now, and several clients mentioned the website specifically before signing with us.</p>
+              </blockquote>
+              <footer class="testimonial__author">
+                <img src="assets/images/avatar-karim-ouramdane.webp" alt="" class="testimonial__avatar" loading="lazy" width="88" height="88" onerror="this.style.display='none'" />
+                <div>
+                  <strong class="testimonial__name" id="testi2Name">Karim Ouramdane</strong>
+                  <span class="testimonial__role">Managing Director, Ardentys</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testimonial__card" aria-labelledby="testi3Name">
+              <div class="testimonial__stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
+              <blockquote class="testimonial__quote">
+                <p>Abdelouahd a été à l'écoute dès le départ. Il a saisi notre univers sans qu'on ait besoin de tout détailler. Le résultat est propre, élégant, et notre clientèle le remarque. La collaboration était simple et agréable du début à la fin.</p>
+              </blockquote>
+              <footer class="testimonial__author">
+                <img src="assets/images/avatar-yasmine-bouzidi.webp" alt="" class="testimonial__avatar" loading="lazy" width="88" height="88" onerror="this.style.display='none'" />
+                <div>
+                  <strong class="testimonial__name" id="testi3Name">Yasmine Bouzidi</strong>
+                  <span class="testimonial__role">Fondatrice, Pavana Care</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testimonial__card" aria-labelledby="testi4Name">
+              <div class="testimonial__stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
+              <blockquote class="testimonial__quote">
+                <p>Most of our customers shop on their phones, so we needed something that worked really well on mobile. That's exactly what we got. The checkout is smooth and our regulars keep saying how much easier the experience is.</p>
+              </blockquote>
+              <footer class="testimonial__author">
+                <img src="assets/images/avatar-nabil-hamidouche.webp" alt="" class="testimonial__avatar" loading="lazy" width="88" height="88" onerror="this.style.display='none'" />
+                <div>
+                  <strong class="testimonial__name" id="testi4Name">Nabil Hamidouche</strong>
+                  <span class="testimonial__role">Co-fondateur, Chinfinity Off</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testimonial__card" aria-labelledby="testi5Name">
+              <div class="testimonial__stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
+              <blockquote class="testimonial__quote">
+                <p>Je ne m'attendais pas à ce que le site fasse une telle différence. Depuis le lancement, on a nettement plus de commandes en ligne. La navigation est simple, les produits ressortent mieux, et les clientes trouvent facilement ce qu'elles cherchent.</p>
+              </blockquote>
+              <footer class="testimonial__author">
+                <img src="assets/images/avatar-rania-meziani.webp" alt="" class="testimonial__avatar" loading="lazy" width="88" height="88" onerror="this.style.display='none'" />
+                <div>
+                  <strong class="testimonial__name" id="testi5Name">Rania Meziani</strong>
+                  <span class="testimonial__role">Gérante, Beauty Touch</span>
+                </div>
+              </footer>
+            </article>
+
+            <article class="testimonial__card" aria-labelledby="testi6Name">
+              <div class="testimonial__stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
+              <blockquote class="testimonial__quote">
+                <p>The brief was simple but the result went beyond what we imagined. The site has a premium feel that matches the property well. Guests mention it at check-in, and the bookings page alone has made a noticeable difference.</p>
+              </blockquote>
+              <footer class="testimonial__author">
+                <img src="assets/images/avatar-amine-larbi.webp" alt="" class="testimonial__avatar" loading="lazy" width="88" height="88" onerror="this.style.display='none'" />
+                <div>
+                  <strong class="testimonial__name" id="testi6Name">Amine Larbi</strong>
+                  <span class="testimonial__role">Brand Manager, Legacy Algiers</span>
+                </div>
+              </footer>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         À PROPOS — #about
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="about section" id="about" aria-labelledby="aboutHeading">
+      <div class="container">
+        <div class="about__grid">
+
+          <div class="about__portrait reveal">
+            <div class="about__portrait-frame">
+              <img
+                src="assets/images/portrait.webp"
+                alt="Portrait d'Abdelouahd, concepteur web freelance spécialisé en sites à fort impact"
+                class="about__portrait-img"
+                loading="lazy"
+                width="480"
+                height="600"
+                onerror="this.parentElement.classList.add('about__portrait-frame--placeholder')"
+              />
+            </div>
+          </div>
+
+          <div class="about__content reveal">
+            <span class="section-label">À propos</span>
+            <h2 class="section-title" id="aboutHeading">Derrière le code</h2>
+            <div class="about__text">
+              <p>Je conçois des expériences web qui aident les entreprises à se démarquer, renforcer leur crédibilité et transformer leurs visiteurs en clients.</p>
+              <p>Je suis spécialisé dans la création de sites web modernes, rapides et pensés pour les résultats.</p>
+              <p>Grâce à mon expérience en marketing digital et en e-commerce, je ne me limite pas à concevoir des sites attrayants. Chaque projet est construit avec un objectif précis : renforcer la crédibilité de la marque, améliorer l'expérience utilisateur et générer davantage d'opportunités commerciales.</p>
+              <p>De la stratégie à la mise en ligne, j'accompagne chaque client dans la création d'une présence digitale professionnelle qui inspire confiance et soutient sa croissance.</p>
+            </div>
+            <a
+              href="https://cal.com/abdelouahd-chergui-3mqd6u/discovery-call"
+              class="btn btn--primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Discutons de votre projet</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         FAQ — #faq
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="faq section" id="faq" aria-labelledby="faqHeading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Questions fréquentes</span>
+          <h2 class="section-title" id="faqHeading">Ce que vous vous demandez</h2>
+        </div>
+
+        <div class="faq__list" id="faqList" role="list">
+
+          <div class="faq__item reveal" role="listitem">
+            <button
+              class="faq__trigger"
+              aria-expanded="false"
+              aria-controls="faqAnswer1"
+              id="faqQuestion1"
+            >
+              <span class="faq__question">Quels sont vos tarifs, et comment définit-on le budget d'un projet ?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq__answer" id="faqAnswer1" role="region" aria-labelledby="faqQuestion1" hidden>
+              <div class="faq__answer-inner">
+                <p>Chaque projet est unique : je n'applique pas de grille tarifaire fixe. Le budget dépend du périmètre, de la complexité et de vos objectifs. Ce qu'on définit ensemble lors de l'appel découverte, c'est précisément ce périmètre — vous recevez ensuite une proposition claire et sans surprise. La transparence fait partie du service.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item reveal" role="listitem">
+            <button
+              class="faq__trigger"
+              aria-expanded="false"
+              aria-controls="faqAnswer2"
+              id="faqQuestion2"
+            >
+              <span class="faq__question">Combien de temps prend la création d'un site ?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq__answer" id="faqAnswer2" role="region" aria-labelledby="faqQuestion2" hidden>
+              <div class="faq__answer-inner">
+                <p>En général, un site vitrine est livré en 2 à 4 semaines. Une landing page peut être prête en moins d'une semaine. Les projets e-commerce ou les sites plus complexes prennent 4 à 8 semaines. Ces délais sont conditionnés par la disponibilité de vos contenus et la rapidité des retours. Dès le début du projet, vous aurez un calendrier précis.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item reveal" role="listitem">
+            <button
+              class="faq__trigger"
+              aria-expanded="false"
+              aria-controls="faqAnswer3"
+              id="faqQuestion3"
+            >
+              <span class="faq__question">Proposez-vous la maintenance et les mises à jour après la mise en ligne ?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq__answer" id="faqAnswer3" role="region" aria-labelledby="faqQuestion3" hidden>
+              <div class="faq__answer-inner">
+                <p>Oui. Je propose un accompagnement post-lancement — corrections, évolutions, mises à jour — soit en régie horaire, soit via un forfait mensuel selon vos besoins. Le site vous appartient entièrement, et vous avez accès à tous les codes sources. Je reste disponible si vous souhaitez évoluer plus tard.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item reveal" role="listitem">
+            <button
+              class="faq__trigger"
+              aria-expanded="false"
+              aria-controls="faqAnswer4"
+              id="faqQuestion4"
+            >
+              <span class="faq__question">J'ai déjà une page Instagram ou Facebook — pourquoi avoir un site web ?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq__answer" id="faqAnswer4" role="region" aria-labelledby="faqQuestion4" hidden>
+              <div class="faq__answer-inner">
+                <p>Les réseaux sociaux sont des plateformes louées : les règles changent, les algorithmes évoluent, et votre audience ne vous appartient pas. Un site web, c'est votre actif numérique propre. Il inspire confiance, améliore votre référencement naturel, convertit mieux, et reste accessible 24h/24. Les deux sont complémentaires — le site est le point d'ancrage, les réseaux sont des canaux d'acquisition.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item reveal" role="listitem">
+            <button
+              class="faq__trigger"
+              aria-expanded="false"
+              aria-controls="faqAnswer5"
+              id="faqQuestion5"
+            >
+              <span class="faq__question">À qui appartient le site une fois livré ?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq__answer" id="faqAnswer5" role="region" aria-labelledby="faqQuestion5" hidden>
+              <div class="faq__answer-inner">
+                <p>Le site vous appartient à 100%. À la livraison, vous recevez l'intégralité des fichiers sources, des accès d'hébergement et des identifiants. Aucune dépendance, aucun abonnement obligatoire envers moi. Vous êtes libre de faire évoluer votre site avec qui vous souhaitez.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item reveal" role="listitem">
+            <button
+              class="faq__trigger"
+              aria-expanded="false"
+              aria-controls="faqAnswer6"
+              id="faqQuestion6"
+            >
+              <span class="faq__question">Comment se déroule la collaboration, de A à Z ?</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq__answer" id="faqAnswer6" role="region" aria-labelledby="faqQuestion6" hidden>
+              <div class="faq__answer-inner">
+                <p>Tout commence par un appel découverte gratuit de 30 minutes. Je cerne vos besoins, je propose une approche, puis vous recevez un devis détaillé sous 48h. Si on s'accorde, on lance le projet : brief, maquette, développement, retours, mise en ligne. Vous êtes impliqué à chaque étape mais sans vous noyer dans les détails techniques. Communication directe, délais tenus, résultat livré.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="faq__cta reveal">
+          <p>Vous avez une autre question ?</p>
+          <a
+            href="https://cal.com/abdelouahd-chergui-3mqd6u/discovery-call"
+            class="btn btn--ghost"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Posons-nous en appel</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         FINAL CTA — #final-cta
+    ══════════════════════════════════════════════════════════════ -->
+    <section class="final-cta" id="final-cta" aria-labelledby="finalCtaHeading">
+
+      <!-- Animated columns background -->
+      <div class="final-cta__bg" aria-hidden="true">
+        <div class="final-cta__col final-cta__col--1"></div>
+        <div class="final-cta__col final-cta__col--2"></div>
+        <div class="final-cta__col final-cta__col--3"></div>
+      </div>
+
+      <div class="container final-cta__inner reveal">
+        <span class="section-label">Prêt à démarrer ?</span>
+        <h2 class="final-cta__title" id="finalCtaHeading">Parlons de votre projet.</h2>
+        <p class="final-cta__desc">
+          Que vous souhaitiez créer un nouveau site web ou améliorer un projet existant,<br class="hide-mobile" />
+          je suis prêt à vous accompagner.
+        </p>
+
+        <div class="final-cta__actions">
+          <a
+            href="https://cal.com/abdelouahd-chergui-3mqd6u/discovery-call"
+            class="btn btn--primary btn--lg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Réserver un appel
+          </a>
+          <a
+            href="https://wa.me/213558074446?text=Bonjour%20Abdelouahd%2C%20je%20vous%20contacte%20suite%20%C3%A0%20la%20consultation%20de%20votre%20portfolio.%20J%27aimerais%20discuter%20d%27un%20projet%20de%20site%20web."
+            class="btn btn--ghost btn--lg final-cta__wa"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contacter sur WhatsApp"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+
+        <p class="final-cta__note">Appel découverte gratuit · Sans engagement · Réponse sous 24h</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       FOOTER — #footer
+  ══════════════════════════════════════════════════════════════ -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a href="#hero" class="footer__logo" aria-label="Abdelouahd — Retour en haut">
+          <span>Abdelouahd</span>
+          <span class="nav__logo-dot" aria-hidden="true"></span>
+        </a>
+        <p class="footer__tagline">Concepteur web freelance.<br>Sites qui convertissent.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Liens de contact et réseaux">
+        <h3 class="footer__nav-title">Contact</h3>
+        <ul class="footer__nav-list" role="list">
+          <li>
+            <a
+              href="https://cal.com/abdelouahd-chergui-3mqd6u/discovery-call"
+              class="footer__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Réserver un appel</a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/213558074446?text=Bonjour%20Abdelouahd%2C%20je%20vous%20contacte%20suite%20%C3%A0%20la%20consultation%20de%20votre%20portfolio.%20J%27aimerais%20discuter%20d%27un%20projet%20de%20site%20web."
+              class="footer__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >WhatsApp</a>
+          </li>
+          <li>
+            <a
+              href="mailto:Abdelouahd.Chergui@gmail.com"
+              class="footer__link"
+            >Email</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="footer__nav" aria-label="Réseaux sociaux">
+        <h3 class="footer__nav-title">Réseaux</h3>
+        <ul class="footer__nav-list" role="list">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/abdelouahd-chergui-223047211/"
+              class="footer__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profil LinkedIn d'Abdelouahd (nouvel onglet)"
+            >LinkedIn</a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/Chergui1473/"
+              class="footer__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Page Facebook d'Abdelouahd (nouvel onglet)"
+            >Facebook</a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p class="footer__copy">&copy; <span id="footerYear"></span> Abdelouahd Chergui. Tous droits réservés.</p>
+        <a href="#hero" class="footer__back-to-top" aria-label="Retour en haut de page">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 13V3M3 8L8 3L13 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Haut de page
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       STICKY MOBILE CTA (mobile only, fixed bottom)
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="sticky-cta" id="stickyCta" aria-label="Actions rapides" role="complementary">
+    <a
+      href="https://cal.com/abdelouahd-chergui-3mqd6u/discovery-call"
+      class="sticky-cta__primary"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Réserver un appel</a>
+    <a
+      href="https://wa.me/213558074446?text=Bonjour%20Abdelouahd%2C%20je%20vous%20contacte%20suite%20%C3%A0%20la%20consultation%20de%20votre%20portfolio.%20J%27aimerais%20discuter%20d%27un%20projet%20de%20site%20web."
+      class="sticky-cta__wa"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contacter via WhatsApp"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════════════════════════ -->
+  <script src="js/main.js" defer></script>
+
+  <!-- GSAP: chargé uniquement sur desktop (≥1024px) avec motion autorisé -->
+  <!-- portfolio.js se charge toujours — GSAP est optionnel (fallback mobile grid si CDN indisponible) -->
+  <script>
+    (function() {
+      var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var isMobile = window.innerWidth < 1024;
+
+      function loadPortfolio() {
+        var pf = document.createElement('script');
+        pf.src = 'js/portfolio.js';
+        document.body.appendChild(pf);
+      }
+
+      if (!isMobile && !rm) {
+        var gsapS = document.createElement('script');
+        gsapS.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
+        gsapS.onerror = loadPortfolio; // CDN failure → charger portfolio.js sans GSAP
+        gsapS.onload = function() {
+          var stS = document.createElement('script');
+          stS.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
+          stS.onerror = loadPortfolio;
+          stS.onload = loadPortfolio;
+          document.body.appendChild(stS);
+        };
+        document.body.appendChild(gsapS);
+      } else {
+        loadPortfolio();
+      }
+    })();
+  </script>
+
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
