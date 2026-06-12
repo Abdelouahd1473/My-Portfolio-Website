@@ -588,43 +588,6 @@ body::before {
   word-spacing: -0.02em;
 }
 
-.hero__typing {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-1);
-  font-family: var(--font-display);
-  font-weight: var(--weight-semibold);
-  letter-spacing: -0.01em;
-  margin-bottom: var(--space-6);
-}
-
-.hero__typing-prefix {
-  font-size: var(--text-2xl);
-  color: var(--text-muted);
-  line-height: var(--leading-snug);
-}
-
-/* Fixed-height line for the typed word — single word never wraps */
-.hero__typing-line {
-  display: flex;
-  align-items: baseline;
-  min-height: 1.5em;
-  font-size: var(--text-xl);
-}
-
-.hero__typing-word {
-  color: var(--accent);
-  min-width: 1ch;
-}
-
-.hero__typing-cursor {
-  display: inline-block;
-  color: var(--accent);
-  margin-left: 2px;
-  animation: cursor-blink 1s step-end infinite;
-  font-weight: var(--weight-regular);
-}
 
 .hero__subtitle {
   font-size: var(--text-md);
@@ -1886,7 +1849,6 @@ body::before {
   }
 
   .hero__badge-dot { animation: none; }
-  .hero__typing-cursor { animation: none; opacity: 1; }
   .hero__glow--1, .hero__glow--2 { animation: none; }
 
   /* Final CTA columns: freeze */

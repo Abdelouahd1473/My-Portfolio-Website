@@ -15,13 +15,6 @@ const INTEGRATION = {
   WHATSAPP_URL:  'https://wa.me/213558074446?text=Bonjour%20Abdelouahd%2C%20je%20vous%20contacte%20suite%20%C3%A0%20la%20consultation%20de%20votre%20portfolio.%20J%27aimerais%20discuter%20d%27un%20projet%20de%20site%20web.',
 };
 
-const TYPING_CONFIG = {
-  words:       ['convertissent', 'vendent', 'inspirent', 'séduisent'],
-  typeSpeed:   130,
-  deleteSpeed: 80,
-  pauseAfterType:   3600,
-  pauseAfterDelete: 900,
-};
 
 const SCROLL_THRESHOLD = 30; // px before nav gets "is-scrolled"
 
@@ -145,69 +138,6 @@ function initNavigation() {
   });
 }
 
-/* ============================================================
-   TYPING EFFECT
-   ============================================================ */
-function initTyping() {
-  const el = document.getElementById('typingWord');
-  if (!el) return;
-
-  // Respect reduced motion: just show first word statically
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    el.textContent = TYPING_CONFIG.words[0];
-    el.setAttribute('aria-label', TYPING_CONFIG.words[0]);
-    return;
-  }
-
-  let wordIndex   = 0;
-  let charIndex   = 0;
-  let isDeleting  = false;
-  let timeoutId   = null;
-
-  const type = () => {
-    const currentWord = TYPING_CONFIG.words[wordIndex];
-    const displayed   = isDeleting
-      ? currentWord.slice(0, charIndex - 1)
-      : currentWord.slice(0, charIndex + 1);
-
-    el.textContent = displayed;
-    el.setAttribute('aria-label', displayed);
-
-    if (!isDeleting) {
-      charIndex++;
-      if (charIndex > currentWord.length) {
-        // Word complete — pause then start deleting
-        isDeleting = true;
-        timeoutId = setTimeout(type, TYPING_CONFIG.pauseAfterType);
-        return;
-      }
-      timeoutId = setTimeout(type, TYPING_CONFIG.typeSpeed);
-    } else {
-      charIndex--;
-      if (charIndex < 0) {
-        // Word deleted — move to next word
-        isDeleting  = false;
-        charIndex   = 0;
-        wordIndex   = (wordIndex + 1) % TYPING_CONFIG.words.length;
-        timeoutId = setTimeout(type, TYPING_CONFIG.pauseAfterDelete);
-        return;
-      }
-      timeoutId = setTimeout(type, TYPING_CONFIG.deleteSpeed);
-    }
-  };
-
-  // Start with brief pause for hero stagger
-  timeoutId = setTimeout(type, 1200);
-
-  // Cleanup on page hide
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      clearTimeout(timeoutId);
-    } else {
-      timeoutId = setTimeout(type, 500);
-    }
-  });
-}
 
 /* ============================================================
    COUNT-UP ANIMATION
@@ -506,7 +436,6 @@ function initMarquee() {
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
-  initTyping();
   initMarquee();
   initCounters();
   initReveal();
