@@ -213,7 +213,9 @@ function initMobilePortfolio() {
 }
 
 /* ============================================================
-   DESKTOP GSAP STACKED CARDS PATH — full-viewport crossfade
+   DESKTOP GSAP STACKED CARDS — cinematic card-deck entrance
+   Each card exits upward while the next rises from below.
+   3D tilt + image parallax on active card (mousemove).
    ============================================================ */
 function initDesktopPortfolio() {
   const wrapper = document.getElementById('portfolioWrapper');
@@ -232,84 +234,147 @@ function initDesktopPortfolio() {
 
   wrapper.appendChild(stack);
 
-  // Stack fills exactly the viewport height — no extra dead space
-  const stackHeight = window.innerHeight;
-  stack.style.height = stackHeight + 'px';
+  const stackHeight     = window.innerHeight;
+  stack.style.height    = stackHeight + 'px';
 
-  // Scroll distance consumed per card transition
-  const cardScrollSpace = 500;
+  // px of scroll per card transition — longer = slower, more cinematic
+  const cardScrollSpace = 650;
 
-  const cards        = stack.querySelectorAll('.portfolio-card--stacked');
-  const cardElements = Array.from(cards);
+  const cards = Array.from(stack.querySelectorAll('.portfolio-card--stacked'));
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Initial state: first card visible + interactive, all others invisible + non-interactive
-  // pointer-events: none on invisible cards ensures clicks pass through to the active card
-  cardElements.forEach((card, i) => {
+  // ── Initial state ──────────────────────────────────────────
+  // Card 0: visible, interactive.
+  // Cards 1+: positioned below the container (yPercent: 100),
+  //           ready to rise up when their turn comes.
+  cards.forEach((card, i) => {
     gsap.set(card, {
       position:      'absolute',
-      top:           0,
-      left:          0,
-      width:         '100%',
-      height:        '100%',
-      zIndex:        PROJECTS.length - i,  // first card on top
+      top: 0, left: 0, width: '100%', height: '100%',
+      zIndex:        cards.length - i,
+      yPercent:      i === 0 ? 0 : 100,
+      scale:         i === 0 ? 1 : 0.96,
       opacity:       i === 0 ? 1 : 0,
       pointerEvents: i === 0 ? 'auto' : 'none',
+      transformOrigin: 'center center',
     });
   });
 
-  // Sequential crossfade: current fades out COMPLETELY before next fades in
-  // p 0→0.5 : current opacity 1→0   (pointer-events disabled at 0)
-  // p 0.5→1 : next opacity 0→1      (pointer-events enabled when > 0)
-  cardElements.forEach((card, i) => {
-    if (i === cardElements.length - 1) return;
-    const nextCard = cardElements[i + 1];
+  // ── Active card tracker ────────────────────────────────────
+  let activeIndex = 0;
+
+  function setActiveCard(idx) {
+    if (idx === activeIndex) return;
+    activeIndex = idx;
+    cards.forEach((c, i) => c.classList.toggle('is-active', i === idx));
+  }
+  cards[0].classList.add('is-active');
+
+  // ── Per-card scroll transitions ────────────────────────────
+  cards.forEach((card, i) => {
+    if (i === cards.length - 1) return;
+    const nextCard = cards[i + 1];
 
     ScrollTrigger.create({
       trigger: stack,
       start:   `top+=${i * cardScrollSpace} top`,
       end:     `top+=${(i + 1) * cardScrollSpace} top`,
-      scrub:   0.8,
-      onUpdate: (self) => {
+      scrub:   1.4,
+      onUpdate(self) {
         const p = self.progress;
-        const curOpacity = p < 0.5 ? 1 - p * 2 : 0;
-        const nxtOpacity = p > 0.5 ? (p - 0.5) * 2 : 0;
-        gsap.set(card,    { opacity: curOpacity, pointerEvents: curOpacity > 0 ? 'auto' : 'none' });
-        gsap.set(nextCard, { opacity: nxtOpacity, pointerEvents: nxtOpacity > 0 ? 'auto' : 'none' });
+
+        // Current card: drifts up and fades (exits by 60% of scroll)
+        const ex = Math.min(p / 0.6, 1);
+        gsap.set(card, {
+          yPercent:      -10 * ex,
+          scale:         1 - 0.05 * ex,
+          opacity:       1 - ex,
+          pointerEvents: ex < 0.85 ? 'auto' : 'none',
+        });
+
+        // Next card: rises from below + fades in (starts at 20% of scroll)
+        const en = Math.max((p - 0.2) / 0.8, 0);
+        gsap.set(nextCard, {
+          yPercent:      100 * (1 - en),
+          scale:         0.96 + 0.04 * en,
+          opacity:       Math.min(en / 0.6, 1),
+          pointerEvents: en > 0.8 ? 'auto' : 'none',
+        });
+
+        setActiveCard(en > 0.6 ? i + 1 : i);
       },
     });
   });
 
-  // Pin the stack for the full run of transitions
+  // ── Pin the stack for the full transition run ──────────────
   ScrollTrigger.create({
     trigger:    stack,
     start:      'top top',
-    end:        `+=${(PROJECTS.length - 1) * cardScrollSpace}`,
+    end:        `+=${(cards.length - 1) * cardScrollSpace}`,
     pin:        true,
     pinSpacing: true,
     id:         'portfolio-pin',
   });
 
-  // Resize: destroy GSAP and fall back to mobile grid below 1024px
+  // ── 3D Tilt + Image Parallax (mousemove on active card) ────
+  const TILT = { maxDeg: 5, perspective: 1200, imgShift: 18 };
+
+  stack.addEventListener('mousemove', (e) => {
+    const active = cards[activeIndex];
+    if (!active) return;
+
+    const rect = stack.getBoundingClientRect();
+    const dx   = (e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2);
+    const dy   = (e.clientY - rect.top  - rect.height / 2) / (rect.height / 2);
+
+    gsap.to(active, {
+      rotateX:             -dy * TILT.maxDeg,
+      rotateY:              dx * TILT.maxDeg,
+      transformPerspective: TILT.perspective,
+      duration:  0.55,
+      ease:      'power2.out',
+      overwrite: 'auto',
+    });
+
+    const img = active.querySelector('.portfolio-card__image');
+    if (img) {
+      gsap.to(img, {
+        x:         dx * TILT.imgShift,
+        y:         dy * TILT.imgShift,
+        duration:  0.55,
+        ease:      'power2.out',
+        overwrite: 'auto',
+      });
+    }
+  }, { passive: true });
+
+  stack.addEventListener('mouseleave', () => {
+    const active = cards[activeIndex];
+    if (!active) return;
+    gsap.to(active, { rotateX: 0, rotateY: 0, duration: 0.75, ease: 'power3.out' });
+    const img = active.querySelector('.portfolio-card__image');
+    if (img) gsap.to(img, { x: 0, y: 0, duration: 0.75, ease: 'power3.out' });
+  });
+
+  // ── Resize: fall back to mobile grid below 1024px ──────────
   let lastWidth = window.innerWidth;
   window.addEventListener('resize', () => {
     const w = window.innerWidth;
-    if (w !== lastWidth) {
-      lastWidth = w;
-      if (w < 1024) {
-        ScrollTrigger.getAll().forEach((t) => {
-          if (t.vars.id === 'portfolio-pin' || t.trigger === stack) t.kill();
-        });
-        const mobileGrid = document.getElementById('portfolioMobileGrid');
-        if (mobileGrid) {
-          mobileGrid.style.display = 'grid';
-          if (!mobileGrid.children.length) initMobilePortfolio();
-        }
-        wrapper.style.display = 'none';
-      } else {
-        ScrollTrigger.refresh();
+    if (w === lastWidth) return;
+    lastWidth = w;
+    if (w < 1024) {
+      ScrollTrigger.getAll().forEach((t) => {
+        if (t.vars.id === 'portfolio-pin' || t.trigger === stack) t.kill();
+      });
+      const mobileGrid = document.getElementById('portfolioMobileGrid');
+      if (mobileGrid) {
+        mobileGrid.style.display = 'grid';
+        if (!mobileGrid.children.length) initMobilePortfolio();
       }
+      wrapper.style.display = 'none';
+    } else {
+      ScrollTrigger.refresh();
     }
   }, { passive: true });
 }

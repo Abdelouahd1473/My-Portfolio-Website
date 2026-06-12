@@ -448,26 +448,31 @@ body::before {
   position: fixed;
   inset: 0;
   top: 65px;
-  background: var(--bg);
+  background: rgba(8, 10, 18, 0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(201, 168, 106, 0.14);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   visibility: hidden;
+  transform: translateY(-12px);
   pointer-events: none;
-  transition: opacity var(--duration) var(--ease),
-              visibility 0s linear var(--duration);
-  z-index: 999;
+  transition: opacity 0.25s var(--ease),
+              transform 0.25s var(--ease-out),
+              visibility 0s linear 0.25s;
+  z-index: 9998;
   overscroll-behavior: contain;
 }
 
 .nav__mobile.is-open {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
   pointer-events: auto;
-  transition: opacity var(--duration) var(--ease),
+  transition: opacity 0.25s var(--ease),
+              transform 0.25s var(--ease-out),
               visibility 0s linear 0s;
 }
 
@@ -585,20 +590,27 @@ body::before {
 
 .hero__typing {
   display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
   font-family: var(--font-display);
-  font-size: var(--text-2xl);
   font-weight: var(--weight-semibold);
-  color: var(--text-muted);
-  margin-bottom: var(--space-6);
   letter-spacing: -0.01em;
-  min-height: 1.4em;
+  margin-bottom: var(--space-6);
 }
 
 .hero__typing-prefix {
+  font-size: var(--text-2xl);
   color: var(--text-muted);
+  line-height: var(--leading-snug);
+}
+
+/* Fixed-height line for the typed word — single word never wraps */
+.hero__typing-line {
+  display: flex;
+  align-items: baseline;
+  min-height: 1.5em;
+  font-size: var(--text-xl);
 }
 
 .hero__typing-word {
@@ -1789,8 +1801,6 @@ body::before {
 /* ---- Mobile (≤ 640px) ---- */
 @media (max-width: 640px) {
   .hero__heading { letter-spacing: -0.025em; word-spacing: 0; }
-  /* Reserve 2-line height so typing word-wrap never shifts layout */
-  .hero__typing { min-height: 3.4em; align-items: flex-start; }
   .hero__cta-group { flex-direction: column; align-items: flex-start; }
   .hero__cta-primary-wrap { align-items: center; }
 

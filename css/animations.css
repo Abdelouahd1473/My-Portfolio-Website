@@ -234,8 +234,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  will-change: opacity;
+  will-change: transform, opacity;
   backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Active card glow — added/removed by JS */
+.portfolio-card--stacked.is-active .portfolio-card--fullscreen {
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 /* ============================================================

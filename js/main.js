@@ -16,11 +16,11 @@ const INTEGRATION = {
 };
 
 const TYPING_CONFIG = {
-  words:       ['convertissent', 'vendent', 'attirent des clients', 'inspirent confiance'],
-  typeSpeed:   95,    // ms per character when typing
-  deleteSpeed: 50,    // ms per character when deleting
-  pauseAfterType:   2800, // ms pause — let the reader absorb the sentence
-  pauseAfterDelete: 650,
+  words:       ['convertissent', 'vendent', 'inspirent', 'séduisent'],
+  typeSpeed:   130,
+  deleteSpeed: 80,
+  pauseAfterType:   3600,
+  pauseAfterDelete: 900,
 };
 
 const SCROLL_THRESHOLD = 30; // px before nav gets "is-scrolled"
