@@ -88,20 +88,31 @@ function initNavigation() {
   // Burger / mobile menu toggle
   if (!burger || !mobile) return;
 
+  // iOS Safari scroll lock: body overflow:hidden alone doesn't prevent scroll
+  let savedScrollY = 0;
+
   const closeMobile = () => {
     burger.classList.remove('is-open');
     burger.setAttribute('aria-expanded', 'false');
     mobile.classList.remove('is-open');
     mobile.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    document.body.style.overflow   = '';
+    document.body.style.position   = '';
+    document.body.style.top        = '';
+    document.body.style.width      = '';
+    window.scrollTo(0, savedScrollY);
   };
 
   const openMobile = () => {
+    savedScrollY = window.scrollY;
+    document.body.style.overflow   = 'hidden';
+    document.body.style.position   = 'fixed';
+    document.body.style.top        = `-${savedScrollY}px`;
+    document.body.style.width      = '100%';
     burger.classList.add('is-open');
     burger.setAttribute('aria-expanded', 'true');
     mobile.classList.add('is-open');
     mobile.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
   };
 
   burger.addEventListener('click', () => {
